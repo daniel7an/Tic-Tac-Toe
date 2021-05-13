@@ -8,6 +8,8 @@ let board = [
 // player name
 let player = "x";
 
+let count = 0;
+
 // game loop
 while(true){
     let boardStr = board[0].join("   ") + 
@@ -52,6 +54,25 @@ while(true){
     } 
     
     
+    // RESTART
+    
+    for (let i = 0; i < board.length; i++) {
+        for (let g = 0; g < board[i].length; g++) {
+            if(board[i][g] !== "_"){
+                count += 1;
+                
+            }
+        }
+    }
+
+    if(count === 9){
+        alert("RESTARTTTTTTTTTT")
+        break;
+
+    }else{
+        count = 0;
+    }
+
     if(player === "x"){
         player = "o";
     }else{
